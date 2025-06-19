@@ -1,0 +1,21 @@
+load("@gazelle//:def.bzl", "gazelle")
+load("@rules_go//proto:def.bzl", "go_proto_library")
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+# gazelle:proto package
+# gazelle:proto_group go_package
+
+gazelle(name = "gazelle")
+
+proto_library(
+    name = "gazelleprotoname_foo_proto",
+    srcs = ["foo.proto"],
+    visibility = ["//visibility:public"],
+)
+
+go_proto_library(
+    name = "gazelleprotoname_foo_go_proto",
+    importpath = "github.com/fardream/gazelleprotoname",
+    proto = ":gazelleprotoname_foo_proto",
+    visibility = ["//visibility:public"],
+)

@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package gazelleprotoname;
+
+option go_package = "github.com/fardream/gazelleprotoname;foo";
+
+message Foo {}
+
+message Bar {}
